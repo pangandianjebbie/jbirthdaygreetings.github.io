@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ecb5d79e;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1em;
+}
+
+.card {
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img.birthday {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.text {
+    padding: 1em;
+    color: #333;
+}
+
+.muted {
+    opacity: 0.8;
+}
+
+.space {
+    height: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .card {
+        flex-direction: row-reverse;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card img.birthday {
+        max-width: 60%;
+        align-self: center;
+    }
+    .text {
+        max-width: 60%;
+        text-align: center;
+    }
+    .audio-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 10px solid transparent;
+}
+
+.flower::before,
+.flower::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.flower::before {
+    width: 20px;
+    height: 20px;
+    background: #ed7979;
+    left: -10px;
+    top: -5px;
+}
+
+.flower::after {
+    width: 10px;
+    height: 10px;
+    background: #e49bbf;
+    right: -5px;
+    top: 5px;
+}
